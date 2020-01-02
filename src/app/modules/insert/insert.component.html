@@ -1,0 +1,41 @@
+<button mat-raised-button color="primary" (click)="openDialog()">Insert</button>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+    <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.projectId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Status">
+        <th mat-header-cell *matHeaderCellDef> status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status | projectStatus}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Planned Start">
+        <th mat-header-cell *matHeaderCellDef> Planned Start </th>
+        <td mat-cell *matCellDef="let element"> {{element.planStartDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Planned Finish">
+        <th mat-header-cell *matHeaderCellDef> Planned Finish </th>
+        <td mat-cell *matCellDef="let element"> {{element.planFinishDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Actual Start">
+        <th mat-header-cell *matHeaderCellDef> Actual Start </th>
+        <td mat-cell *matCellDef="let element"> {{element.actualStartDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Actula Finish">
+        <th mat-header-cell *matHeaderCellDef> Actula Finish </th>
+        <td mat-cell *matCellDef="let element"> {{element.actualFinishDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Planned Progress">
+        <th mat-header-cell *matHeaderCellDef> Planned Progress </th>
+        <td mat-cell *matCellDef="let element"> {{element.planProgress}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Actual Progress">
+        <th mat-header-cell *matHeaderCellDef> Actual Progress </th>
+        <td mat-cell *matCellDef="let element"> {{element.actualProgress}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

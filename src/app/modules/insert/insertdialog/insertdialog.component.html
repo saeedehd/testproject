@@ -1,0 +1,126 @@
+<div fxLayout="column" fxLayoutGap="25px">
+    <div id="toolbar" fxFlex fxLayout="column" fxLayoutGap="25px">
+      <form [formGroup]="formGroup">
+        <div fxLayout="column"> 
+          <div fxFlex="row" fxLayoutGap="15px">
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>status</mat-label>
+                <mat-select formControlName="status">
+                  <mat-option
+                    *ngFor="let item of enability_options"
+                    [value]="item"
+                  >
+                    {{ item | projectStatus }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Project Name"
+                  formControlName="name"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div fxFlex="row" fxLayoutGap="15px">
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>Plan_Start</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="yyyy/mm/dd"
+                  formControlName="planStartDate"
+                />
+              </mat-form-field>
+            </div>
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>Plan_Finish</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="yyyy/mm/dd"
+                  formControlName="planFinishDate"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxFlex="row" fxLayoutGap="15px">
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>Actual_Start</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="yyyy/mm/dd"
+                  formControlName="actualStartDate"
+                />
+              </mat-form-field>
+            </div>
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>Actual_Finish</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="yyyy/mm/dd"
+                  formControlName="actualFinishDate"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div fxFlex="row" fxLayoutGap="15px">
+            <div fxFlex="100" class="feild">
+              <mat-form-field>
+                <mat-label>Plan_progress</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="percentage"
+                  formControlName="planProgress"
+                />
+              </mat-form-field>
+            </div>
+  
+            <div fxFlex="100" class="feild"> 
+              <mat-form-field>
+                <mat-label>Actual_progress</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  placeholder="%"
+                  formControlName="actualProgress"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          </div>
+      </form>
+    </div>
+    <div fxFlex fxLayout="row">
+      <button fxFlex type="button" (click)="cancel()" mat-button color="primary">
+        Cancle
+      </button>
+      <button
+        fxFlex
+        type="button"
+        (click)="add()"
+        mat-raised-button
+        color="primary"
+      >
+       Add
+      </button>
+    </div>
+  </div>
+  
