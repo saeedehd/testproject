@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatIconModule, MatButtonModule, MatButtonToggleModule, MatBottomSheetModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDialogModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatButtonToggleModule, MatBottomSheetModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 import { InsertComponent } from 'src/app/modules/insert/insert.component';
 import { DefaultComponent } from './default.component';
@@ -40,7 +40,9 @@ import { InsertdialogComponent } from 'src/app/modules/insert/insertdialog/inser
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule, 
   ],
   entryComponents: [ UpdateBottomComponent , InsertdialogComponent]
 })

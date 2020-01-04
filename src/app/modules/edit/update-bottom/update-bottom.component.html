@@ -33,23 +33,17 @@
             <div fxFlex="100" class="feild">
               <mat-form-field>
                 <mat-label>Plan_Start</mat-label>
-                <input
-                  type="text"
-                  matInput
-                  placeholder="yyyy/mm/dd"
-                  formControlName="planStartDate"
-                />
+                <input matInput [matDatepicker]="picker01" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker01"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </div>
             <div fxFlex="100" class="feild">
               <mat-form-field>
                 <mat-label>Plan_Finish</mat-label>
-                <input
-                  type="text"
-                  matInput
-                  placeholder="yyyy/mm/dd"
-                  formControlName="planFinishDate"
-                />
+                <input matInput [matDatepicker]="picker02" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker02"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </div>
           </div>
@@ -58,23 +52,17 @@
             <div fxFlex="100" class="feild">
               <mat-form-field>
                 <mat-label>Actual_Start</mat-label>
-                <input
-                  type="text"
-                  matInput
-                  placeholder="yyyy/mm/dd"
-                  formControlName="actualStartDate"
-                />
+                <input matInput [matDatepicker]="picker03" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker03"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </div>
             <div fxFlex="100" class="feild">
               <mat-form-field>
                 <mat-label>Actual_Finish</mat-label>
-                <input
-                  type="text"
-                  matInput
-                  placeholder="yyyy/mm/dd"
-                  formControlName="actualFinishDate"
-                />
+                <input matInput [matDatepicker]="picker04" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker04"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </div>
           </div>
