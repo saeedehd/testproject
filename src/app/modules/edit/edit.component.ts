@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
   displayedColumns: string[];
   dataSource = new MatTableDataSource<Project>([]);
   editedProjects : Project[];
+  selectedId:any;
 	constructor(private ProjectsService: ProjectsService , public dialog: MatDialog) {
     this.displayedColumns = ['ID', 'Name', 'Status' ,'Planned Start', 'Planned Finish', 'Actual Start', 'Actula Finish', 'Planned Progress', 'Actual Progress', 'Action'];
 	this.ProjectsService.showPojects().subscribe((response) => {this.dataSource.data = response.Result;});
@@ -28,11 +29,15 @@ export class EditComponent implements OnInit {
       for (var i in this.editedProjects) {
         if (this.editedProjects[i].projectId == result.projectId) {
           this.editedProjects[i]= result;
-          console.log(this.editedProjects);
+          this.selectedId=Number(i)+1;
+          console.log(typeof(this.selectedId));
            break; //Stop this loop, we found it!
         }
       }
-      this.dataSource = new MatTableDataSource(this.editedProjects); 
+      this.dataSource = new MatTableDataSource(this.editedProjects);
+      const dialogRef = this.dialog.open(UpdateBottomComponent, {
+        data:this.editedProjects[this.selectedId]
+      });
     });
   }
 

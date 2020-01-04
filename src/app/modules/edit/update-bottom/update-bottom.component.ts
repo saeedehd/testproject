@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { ProjectsService } from 'src/app/services/projects.service';
 
+
 @Component({
   selector: 'app-update-bottom',
   templateUrl: './update-bottom.component.html',
@@ -13,6 +14,7 @@ export class UpdateBottomComponent implements OnInit {
 formGroup: FormGroup;
 enability_options =[0,1,2,3];
 local_data:any;
+
 
 constructor (
     private projectService: ProjectsService,
